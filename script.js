@@ -52,8 +52,8 @@ let count = 0; //Number of current image
 const next = document.querySelector('.next');
 next.onclick = nextFunction;
 
-// const prev = document.querySelector('.prev');
-// prev.onclick = prevFunction;
+const prev = document.querySelector('.prev');
+prev.onclick = prevFunction;
 
 // const reset = document.querySelector('.reset');
 // reset.onclick = resetFunction;
@@ -67,6 +67,20 @@ function nextFunction() {
     }
 
     // Delete active-img class
+    for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove('active-img');
+    }
+    images[count].classList.add('active-img');
+    document.querySelector('.img-max').src = images[count].src;
+}
+
+function prevFunction() {
+    if (count > 0) {
+        count--;
+    } else {
+        count = images.length - 1;
+    }
+
     for (let i = 0; i < images.length; i++) {
         images[i].classList.remove('active-img');
     }
