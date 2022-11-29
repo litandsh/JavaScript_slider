@@ -46,9 +46,16 @@ body {
     background-color: rgb(79, 126, 79);
     color: #fff;
     padding: 10px 20px;
-    border: none;
+    border: solid 2px  rgb(79, 126, 79);
     border-radius: 5px;
     display: inline-block;
     margin: 20px;
     letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btnStyle:hover {
+    color:  rgb(79, 126, 79);
+    background-color: #fff;
+    border: solid 2px  rgb(79, 126, 79);
 }
