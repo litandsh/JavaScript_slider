@@ -55,35 +55,44 @@ next.onclick = nextFunction;
 const prev = document.querySelector('.prev');
 prev.onclick = prevFunction;
 
-// const reset = document.querySelector('.reset');
-// reset.onclick = resetFunction;
+const reset = document.querySelector('.reset');
+reset.onclick = resetFunction;
 
 // Button's functions
 function nextFunction() {
-    if (count + 1 < images.length) {
-        count++;
-    } else {
-        count = 0
-    }
+  if (count + 1 < images.length) {
+    count++;
+  } else {
+    count = 0;
+  }
 
-    // Delete active-img class
-    for (let i = 0; i < images.length; i++) {
-        images[i].classList.remove('active-img');
-    }
-    images[count].classList.add('active-img');
-    document.querySelector('.img-max').src = images[count].src;
+  // Delete active-img class
+  for (let i = 0; i < images.length; i++) {
+    images[i].classList.remove('active-img');
+  }
+  images[count].classList.add('active-img');
+  document.querySelector('.img-max').src = images[count].src;
 }
 
 function prevFunction() {
-    if (count > 0) {
-        count--;
-    } else {
-        count = images.length - 1;
-    }
+  if (count > 0) {
+    count--;
+  } else {
+    count = images.length - 1;
+  }
 
-    for (let i = 0; i < images.length; i++) {
-        images[i].classList.remove('active-img');
-    }
-    images[count].classList.add('active-img');
-    document.querySelector('.img-max').src = images[count].src;
+  for (let i = 0; i < images.length; i++) {
+    images[i].classList.remove('active-img');
+  }
+  images[count].classList.add('active-img');
+  document.querySelector('.img-max').src = images[count].src;
+}
+
+function resetFunction() {
+  count = 0;
+  for (let i = 0; i < images.length; i++) {
+    images[i].classList.remove('active-img');
+  }
+  images[count].classList.add('active-img');
+  document.querySelector('.img-max').src = images[count].src;
 }
